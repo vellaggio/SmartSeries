@@ -1,17 +1,20 @@
 var renderQuestion = function(data){
+  if (data == undefined) {
+    console.log("no question");
+    return;
+  }
   data = data[0];
+  console.log(data);
   var compiled_question = _.template("<%= question %>");
-  $(function(){
-    $('#qHeader').append(compiled_question(data));
-  });
   var compiled_answer = _.template(
 	"<li class='table-view-cell' style='background-color:<%= color %>'>"+
-          "<%= question %>"+
-          "<a class='btn btn-outlined btn-white' href='vote?id=<%= .id %>'>VOTA</a>"+
+          "<%= text %>"+
+          "<a class='btn btn-outlined btn-white' href='vote?id=<%= id %>'>VOTA</a>"+
         "</li>");
   $(function(){
+    $('#countdown').countdown({date: data.date_end});
     $('#qHeader').append(compiled_question(data));
-    $.each(data, function(index, answer) {
+    $.each(data.answers, function(index, answer) {
           console.log(index);
           console.log(answer);
           $('.options_list').append(compiled_answer(answer));
@@ -22,7 +25,7 @@ var renderQuestion = function(data){
   var compiled_answer = _.template(
 	"<li class='table-view-cell' style='background-color:<%= color %>'>"+
           "<%= question %>"+
-          "<a class='btn btn-outlined btn-white' href='vote?id=<%= .id %>'>VOTA</a>"+
+          "<a class='btn btn-outlined btn-white' href='vote?id=<%= id %>'>VOTA</a>"+
         "</li>");
       $(function(){
         $.each(data.answers, function(index, answer) {
