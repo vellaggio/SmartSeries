@@ -1,3 +1,14 @@
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
 .slider {
   margin-bottom: 0;
 }
@@ -8,8 +19,24 @@
 .content-padded {
   margin: 30px 15px 15px;
 }
-
 .serie_desc{
   max-height: 60px;
   overflow-y: hidden;
 }
+#countdown{
+  margin: 0 auto 0 auto;
+  color: rgba(255, 255, 255, 1);
+  width: 100%;
+  text-align: center;
+  font-family: codropsicons;
+  font-size: 35px;
+  background-color: rgba(45, 204, 45, 0.66);
+  padding: 30px 0 30px 0;
+}
+/*
+.options_list, .btn-white
+{
+  color:white;
+}
+*/
+
