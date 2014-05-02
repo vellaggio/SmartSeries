@@ -14,6 +14,8 @@
     <script type="text/javascript" src="js/underscore-min.js"></script>
     <script src="js/ratchet.min.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="js/serie.js"></script>
+    <script></script>
   </head>
   <body>
     
@@ -32,21 +34,12 @@
     
     <div class="content" style="text-align: center;">
       <div hidden id="countdown"></div>
+      <h2 id="qHeader"></h2>
       <div class="vote_options">
-        <ul class="table-view options_list">
-
-          <script>
-          var list_options = "<% _.each(options, function(option) { %> <li>"+
-          "<li class='table-view-cell' style='background-color:<%= option.color %>'>"+
-            "<%= option.question %>"+
-            "<a class='btn btn-outlined btn-white' href='vote?id=<%= option.id %>'>VOTA</a>"+
-          "</li><% }); %>";
-          
-          //Example object
-          $('.options_list').append(_.template(list_options,{"options":[{"id": "125", "question": "L'actor obre la porta", "color" : "white"},{"id": "13", "question": "L'actor no obre la porta i marxa com un cobard", "color" : "white"}]}));
-        </script>
+        <ul class="table-view options_list">       
         </ul>
       </div>
+      
       <!--Use later for chapters
       <ul hidden class="table-view">
         <li class="table-view-cell table-view-divider">Theaters nearby</li>

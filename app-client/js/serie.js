@@ -1,0 +1,64 @@
+var renderQuestion = function(data){
+  data = data[0];
+  var compiled_question = _.template("<%= question %>");
+  $(function(){
+    $('#qHeader').append(compiled_question(data));
+  });
+  var compiled_answer = _.template(
+	"<li class='table-view-cell' style='background-color:<%= color %>'>"+
+          "<%= question %>"+
+          "<a class='btn btn-outlined btn-white' href='vote?id=<%= .id %>'>VOTA</a>"+
+        "</li>");
+  $(function(){
+    $('#qHeader').append(compiled_question(data));
+    $.each(data, function(index, answer) {
+          console.log(index);
+          console.log(answer);
+          $('.options_list').append(compiled_answer(answer));
+        });
+  });
+  
+  /*
+  var compiled_answer = _.template(
+	"<li class='table-view-cell' style='background-color:<%= color %>'>"+
+          "<%= question %>"+
+          "<a class='btn btn-outlined btn-white' href='vote?id=<%= .id %>'>VOTA</a>"+
+        "</li>");
+      $(function(){
+        $.each(data.answers, function(index, answer) {
+          console.log(index);
+          console.log(answer);
+          $('.options_list').append(compiled_answer(answer));
+        });
+      });
+  */
+};
+
+//get serie id
+var path = $(location).attr('href');
+var spath=path.split("?");
+path=spath[1];
+var params = path.split("&");
+var i, id, values;
+for (i=0; i<params.length; i++){
+  if (params[i].indexOf("id")!=-1) { //id
+    values = params[i].split("=");
+    var id= values[1];
+  }
+  if (params[i].indexOf("name")!=-1) { //id
+    values = params[i].split("=");
+    var name= values[1].replace("%20", " ");
+    $(function(){
+      $('title').text(name);
+      $('#serie_title').text(name);
+  });
+  }
+}
+
+$.ajax({
+  dataType: "jsonp",
+  jsonpCallback: "renderQuestion",
+  url: "http://10.252.165.64:8181/series/"+id+"/questions" ,
+});
+
+
