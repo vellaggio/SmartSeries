@@ -9,7 +9,9 @@ var renderQuestion = function(data){
   var compiled_answer = _.template(
 	"<li class='table-view-cell' style='background-color:<%= color %>'>"+
           "<%= text %>"+
-          "<a class='btn btn-outlined btn-white' href='vote?id=<%= id %>'>VOTA</a>"+
+          "<a class='btn btn-outlined btn-white' href='vote?id=<%= id %>'"+
+          "onclick='function() {$.post(\'" + server_address + "/vote/<%= id %>\') };'" +
+          ">VOTA</a>"+
         "</li>");
   $(function(){
     $('#countdown').countdown({date: data.date_end});
