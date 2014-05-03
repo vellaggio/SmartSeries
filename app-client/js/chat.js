@@ -5,16 +5,16 @@ var path = $(location).attr('href');
 var spath=path.split("?");
 path=spath[1];
 var params = path.split("&");
-var i, id, values, name;
+var i, values, name;
 for (i=0; i<params.length; i++){
-  if (params[i].indexOf("name")!=-1) { //id
+  if (params[i].indexOf("name")!=-1) { 
     values = params[i].split("=");
     name= values[1].replace("%20", " ");
     $(function(){
       $('#chat_title').text(name);
     });
   }
-  if (params[i].indexOf("img")!=-1) { //id
+  if (params[i].indexOf("img")!=-1) { 
     values = params[i].split("=");
     img= values[1];
     $(function(){
@@ -24,8 +24,10 @@ for (i=0; i<params.length; i++){
 }
 function sendM(){
   $("#mesage_you").empty().text($('#input_send').val());
-    $("#mesage_you").parent().show();
-    $("#input_send").attr("value", "");
+  $("#mesage_you").parent().show();
+  $("#input_send").remove();
+  var $input = "<input id='input_send' type='text' placeholder='Type here your message'>"
+  $('#text_send').append($input);
 }
 
 
