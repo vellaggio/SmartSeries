@@ -9,7 +9,7 @@ var renderQuestion = function(data){
   var compiled_answer = _.template(
 	"<li class='table-view-cell' style='background-color:<%= color %>'>"+
           "<%= text %>"+
-          "<a class='btn btn-outlined btn-white' href='vote.html'"+
+          "<a class='btn btn-outlined btn-white'"+
           "onclick='function() {$.post(\'" + server_address + "/vote/<%= id %>\') };'" +
           ">VOTA</a>"+
         "</li>");
@@ -22,21 +22,7 @@ var renderQuestion = function(data){
           $('.options_list').append(compiled_answer(answer));
         });
   });
-  
-  /*
-  var compiled_answer = _.template(
-	"<li class='table-view-cell' style='background-color:<%= color %>'>"+
-          "<%= question %>"+
-          "<a class='btn btn-outlined btn-white' href='vote?id=<%= id %>'>VOTA</a>"+
-        "</li>");
-      $(function(){
-        $.each(data.answers, function(index, answer) {
-          console.log(index);
-          console.log(answer);
-          $('.options_list').append(compiled_answer(answer));
-        });
-      });
-  */
+
 };
 
 //get serie id
