@@ -6,8 +6,10 @@ var renderSeries = function(data){
 	  "<img class='media-object pull-left s64x64' src='" + server_address + "/<%= image_url %>'>"+
 	  "<div class='media-body'>"+
 	    "<%= name %>"+
-	    "<p class='serie_desc'><%= description %></p>"+
+	    "<p class='serie_desc' style='width:92%'><%= description %></p>"+
+            "<div class='fav'><span class='icon icon-star'></span></div>"+
 	  "</div>"+
+          
 	"</a>"+
       "</li>");
       $(function(){

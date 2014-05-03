@@ -43,4 +43,13 @@
   max-height: 64px;
   min-height: 64px;
 }
+.fav{
+
+height: 100%;
+
+display: inline;
+position: fixed;
+right: 50px;
+margin-top: -55px;
+}
 
