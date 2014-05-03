@@ -59,7 +59,7 @@ var redirect = function(){window.location.href="vote.html"};
 $.ajax({
   dataType: "jsonp",
   jsonpCallback: "renderQuestion",
-  url: "http://10.252.165.64:8181/series/"+id+"/questions" ,
+  url: server_address + "/series/"+id+"/questions" ,
 });
 
 
