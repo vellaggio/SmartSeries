@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Friends</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      
+    <link rel="stylesheet" href="css/ratchet.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/config.js"></script>
+
+   
+  </head>
+  <body>
+    
+    <script>
+      $(document).ready(function(){
+        
+        $('.search-top').click(function(){
+          if ($(this).hasClass("icon-search")) {
+            $('.title-top').hide();
+            $('.search_cont').show();
+            $(this).removeClass("icon-search").addClass("icon-close");
+          }else{
+            $('.search_cont').hide();
+            $('.title-top').show();           
+            $(this).removeClass("icon-close").addClass("icon-search");
+          }
+          
+        });
+      });
+      function showShearch()
+      {
+        $(this).parent().find('h1').hide();
+        $(this).parent().find('.search_cont').show();
+      }
+    </script>
+    
+    <header class="bar bar-nav">
+      <a style="margin-right:10px;" class="icon icon-search pull-right search-top" href="javascript:void(0)"></a>
+      <h1 style="text-align:left;margin-left: 10px;" class="title title-top">Friends</h1>
+      <div class="search_cont" hidden style="float: left; width: 100%; padding-right: 70px; margin-top: -42px;">
+        <form>
+          <input type="search" placeholder="Search">
+        </form>
+      </div>
+    </header>
+
+    
+
+    <div class="content">
+
+      <ul style="margin-top:0" class="table-view" id="series_list">
+        <li class='table-view-cell media'>
+          <a class='navigate-right' href='serie_view.html?id=<%= id %>&name=<%= name %>' data-transition='slide-in'>
+            <img class='media-object pull-left s64x64 rodona' src='img/rmartinez.jpg'>
+            <div class='media-body media-body-chat'>
+              Raul Martinez
+            </div>        
+          </a>
+        </li>
+        <li class='table-view-cell media'>
+          <a class='navigate-right' href='serie_view.html?id=<%= id %>&name=<%= name %>' data-transition='slide-in'>
+            <img class='media-object pull-left s64x64 rodona' src='img/scarneros.jpg'>
+            <div class='media-body media-body-chat'>
+              Sergi Carneros
+            </div>        
+          </a>
+        </li>
+        <li class='table-view-cell media'>
+          <a class='navigate-right' href='serie_view.html?img=agarriga.jpg&name=Adria Garriga' data-transition='slide-in'>
+            <img class='media-object pull-left s64x64 rodona' src='img/agarriga.jpg'>
+            <div class='media-body media-body-chat'>
+              Adria Garriga
+            </div>        
+          </a>
+        </li>
+        <li class='table-view-cell media'>
+          <a class='navigate-right' href='chat_view.html?name=Ferran Mesas&img=fmesas.jpg' data-transition='slide-in'>
+            <img class='media-object pull-left s64x64 rodona' src='img/fmesas.jpg'>
+            <div class='media-body media-body-chat'>
+              Ferran Mesas
+            </div>        
+          </a>
+        </li>
+        <li class='table-view-cell media'>
+          <a class='navigate-right' href='serie_view.html?id=<%= id %>&name=<%= name %>' data-transition='slide-in'>
+            <img class='media-object pull-left s64x64 rodona' src='img/miki.png'>
+            <div class='media-body media-body-chat'>
+              Miquel Tolosa
+            </div>        
+          </a>
+        </li>
+      </ul>
+    </div><!-- /.content -->
+  <nav class="bar bar-tab">
+      <a class="tab-item active" href="#">
+        <span class="icon icon-list"></span>
+        <span class="tab-label">Series</span>
+      </a>
+      <a class="tab-item" href="#">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Friends</span>
+      </a>
+      <a class="tab-item" href="#">
+        <span class="icon icon-star-filled"></span>
+        <span class="tab-label">Favorites</span>
+      </a>
+      <a class="tab-item" href="#">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">Settings</span>
+      </a>
+    </nav>
+  </body>
+</html>

@@ -52,4 +52,55 @@ position: fixed;
 right: 50px;
 margin-top: -55px;
 }
+.rodona{
+  border-radius: 32px;
+}
+.media-body-chat
+{
+  margin-top: 20px;
+}
+.message{
+  text-align: left;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#text_send{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 35px;
+}
+#text_send input{
+  height: 70px;
+}
+#send_cont{
+  width: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 25px;
+  cursor: pointer;
+}
+#send_cont img{
+  width: 100%;
+  height: 100%;
+}
+
+.chat_list {
+  width:100%;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding-right: 10px;
+  height: 80px;
+}
+
+.cLeft > *{
+  float:left;
+}
+.cRight > *{
+  float:right;
+}
+
+
 

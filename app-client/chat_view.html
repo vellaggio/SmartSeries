@@ -12,9 +12,8 @@
     <link rel="stylesheet" href="css/app.css">
     <script type="text/javascript" src="js/underscore-min.js"></script>
     <script src="js/jquery.min.js"></script>
-    <script src=js/countdown.js></script>
-    <script src="js/config.js"></script>
-    <script src="js/serie.js"></script>
+    <script src="js/chat.js"></script>
+
     <script></script>
   </head>
   <body>
@@ -24,16 +23,30 @@
         <span class="icon icon-left-nav"></span>
         Back
       </a>
-      <h1 class="title" id="serie_title"></h1>
+      <h1 class="title" id="chat_title"></h1>
     </header>
     
-    <div class="content" style="text-align: center;">
-      <div id="countdown"></div>
-      <h2 id="qHeader"></h2>
-      <div class="vote_options">
-        <ul class="table-view options_list">       
-        </ul>
-      </div>    
+    <div class="content">
+      <div class="chat_list cLeft" class="chat_list">
+        <img class="s64x64 rodona img_chat" src=""/>
+        <div class="message">
+          Has vist el final del capitol??? Massa epik
+        </div>
+      </div>
+      
+      <div hidden class="chat_list cRight" class="chat_list">
+        <img class="s64x64 rodona" src="img/you.jpg"/>
+        <div class="message" id="mesage_you">
+          ya veuuus!!!
+        </div>
+        
+      </div>
+      
+      <div id="text_send">
+         <input id="input_send" type="text" placeholder="Type here your message">
+        <div id="send_cont"><img src="img/send.jpg"></div>
+      </div>
+       
     </div>
     <nav class="bar bar-tab">
       <a class="tab-item active" href="series.html">
