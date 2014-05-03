@@ -10,7 +10,7 @@ var renderQuestion = function(data){
 	"<li class='table-view-cell' style='background-color:<%= color %>'>"+
           "<%= text %>"+
           "<a class='btn btn-outlined btn-white'"+
-          "onclick='function() {$.post(\'" + server_address + "/vote/<%= id %>\') };'" +
+          "onclick='vote(<%= id %>)'" +
           ">VOTA</a>"+
         "</li>");
   $(function(){
@@ -45,6 +45,16 @@ for (i=0; i<params.length; i++){
   });
   }
 }
+function vote(id)
+{
+  $.ajax({
+  type : "get",
+  dataType: "jsonp",
+  jsonpCallback: "redirect",
+  url: server_address + "/vote/"+id ,
+});
+}
+var redirect = function(){window.location.href="vote.html"};
 
 $.ajax({
   dataType: "jsonp",
