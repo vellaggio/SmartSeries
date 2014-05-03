@@ -24,6 +24,6 @@ var renderSeries = function(data){
 $.ajax({
   dataType: "jsonp",
   jsonpCallback: "renderSeries",
-  url: "http://10.252.165.64:8181/series/" ,
+  url: server_address + "/series/" ,
 });
 
