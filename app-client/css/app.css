@@ -37,10 +37,10 @@
   padding: 10px;
   margin-top: 5px;
 }
-/*
-.options_list, .btn-white
-{
-  color:white;
+.s64x64{
+  max-width: 64px;
+  min-width: 64px;
+  max-height: 64px;
+  min-height: 64px;
 }
-*/
 

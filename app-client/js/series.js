@@ -3,7 +3,7 @@ var renderSeries = function(data){
       var compiled_serie = _.template(
 	"<li class='table-view-cell media'>"+
 	"<a class='navigate-right' href='serie_view.html?id=<%= id %>&name=<%= name %>' data-transition='slide-in'>"+
-	  "<img class='media-object pull-left' src='" + server_address + "/<%= image_url %>'>"+
+	  "<img class='media-object pull-left s64x64' src='" + server_address + "/<%= image_url %>'>"+
 	  "<div class='media-body'>"+
 	    "<%= name %>"+
 	    "<p class='serie_desc'><%= description %></p>"+
