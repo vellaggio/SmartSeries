@@ -2,7 +2,7 @@
 
 //get params
 var path = $(location).attr('href');
-var spath=path.split("#");
+var spath=path.split("?");
 path=spath[1];
 var params = path.split("&");
 var i, id, values, name;
@@ -22,14 +22,12 @@ for (i=0; i<params.length; i++){
     });
   }
 }
-
-$(document).ready(function(){
-  $('#send_cont').click(function(){
-    $("#mesage_you").empty().text($('#input_send').val());
+function sendM(){
+  $("#mesage_you").empty().text($('#input_send').val());
     $("#mesage_you").parent().show();
     $("#input_send").attr("value", "");
-  });
-});
+}
+
 
 function getCName()
 {
