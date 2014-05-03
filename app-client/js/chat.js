@@ -2,7 +2,7 @@
 
 //get params
 var path = $(location).attr('href');
-var spath=path.split("?");
+var spath=path.split("#");
 path=spath[1];
 var params = path.split("&");
 var i, id, values, name;
