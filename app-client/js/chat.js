@@ -27,7 +27,7 @@ $(document).ready(function(){
   $('#send_cont').click(function(){
     $("#mesage_you").empty().text($('#input_send').val());
     $("#mesage_you").parent().show();
-    $("#input_send").val("");
+    $("#input_send").attr("value", "");
   });
 });
 
