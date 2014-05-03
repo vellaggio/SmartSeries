@@ -7,7 +7,6 @@ var renderSeries = function(data){
 	  "<div class='media-body'>"+
 	    "<%= name %>"+
 	    "<p class='serie_desc' style='width:92%'><%= description %></p>"+
-            "<div class='fav'><span class='icon icon-star'></span></div>"+
 	  "</div>"+
           
 	"</a>"+
